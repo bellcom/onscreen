@@ -1,0 +1,7 @@
+parameters:
+#    onscreen_admin.example.class: Onscreen\AdminBundle\Example
+
+services:
+#    onscreen_admin.example:
+#        class: %onscreen_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

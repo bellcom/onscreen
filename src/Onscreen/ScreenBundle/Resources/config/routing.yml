@@ -1,0 +1,8 @@
+homepage:
+    pattern:  /
+    defaults:
+        _controller: OnscreenScreenBundle:Default:index
+screen:
+    pattern:  /screen/{name}
+    defaults:
+        _controller: OnscreenScreenBundle:Default:screen
