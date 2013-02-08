@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <title>{{ title|default('onscreen') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/fx/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/fx/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/fx/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/fx/css/onscreen.css" rel="stylesheet">
+</head>
+<body>
+    <header class="container-fluid">
+        <h1><i class="icon-leaf"></i> bellcom aps</h1>
+    </header>
+    <div class="container-fluid">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        bellcom aps 2013 - {{ "now"|date("Y") }}
+    </footer>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/fx/js/bootstrap.min.js"></script>
+{% block javascript %}{% endblock %}
+</body>
 </html>
