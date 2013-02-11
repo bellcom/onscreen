@@ -95,6 +95,43 @@ class DefaultController extends Controller
                         ]
                     ],
                 ],
+                [
+                    'id' => 'screen-2-rand',
+                    'rows' => [
+                        [
+                            'columns' => [
+                                ['widgets' => [[
+                                    // 'title' => 'App server response time (ms)',
+                                    'content' => '<iframe src="https://rpm.newrelic.com/public/charts/cB40sSFw3po" width="100%" height="300" scrolling="no" frameborder="no"></iframe>'
+                                ]]],
+                                ['widgets' => [[
+                                    // 'title' => 'App server response time (ms)',
+                                    'content' => '<iframe src="https://rpm.newrelic.com/public/charts/kGbRAGetkHV" width="100%" height="300" scrolling="no" frameborder="no"></iframe>'
+                                ]]],
+                            ],
+                        ],
+                        [
+                            'columns' => [
+                                ['widgets' => [[
+                                    'title' => 'a lsdakfaskdf',
+                                    'content' => '<p>askd as djfasjæasæ fajældf</p>'
+                                ]]],
+                                ['widgets' => [[
+                                    'title' => 'a lsdakfaskdf',
+                                    'content' => '<p>askd as djfasjæasæ fajældf</p>'
+                                ]]],
+                                ['widgets' => [[
+                                    'title' => 'a lsdakfaskdf',
+                                    'content' => '<p>askd as djfasjæasæ fajældf</p>'
+                                ]]],
+                                ['widgets' => [[
+                                    'title' => 'a lsdakfaskdf',
+                                    'content' => '<p>askd as djfasjæasæ fajældf</p>'
+                                ]]],
+                            ],
+                        ]
+                    ],
+                ],
             ],
         ]);
     }

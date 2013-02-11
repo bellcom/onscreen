@@ -2,22 +2,24 @@
 {% block content %}
 {% for screen in screens %}
 
-    <div class="screen row-fluid screen-{{ loop.index }}{% if loop.first == false %} hide{% endif %}"{% if screen.id is defined %} id="{{ screen.id }}"{% endif %}>
+    <div class="screen row-fluid screen-{{ loop.index }}{% if loop.first %} active{% endif %}"{% if screen.id is defined %} id="{{ screen.id }}"{% endif %}>
     {% for row in screen.rows %}
         <div class="row-fluid">
         {% for column in row.columns %}
             {% if column.type is not defined %}
                 <div class="span{{ 12 / loop.length }}">
                 {% for widget in column.widgets %}
-                    {% if widget.title is defined %}
-                    <h2><i class="icon-cogs"></i> {{ widget.title }}</h2>
-                    {% endif %}
-                    <div class="widget">{{ widget.content|raw }}</div>
+                    <div class="element">
+                        {% if widget.title is defined %}
+                        <h2><i class="icon-cogs"></i> {{ widget.title }}</h2>
+                        {% endif %}
+                        <div class="widget">{{ widget.content|raw }}</div>
+                    </div>
                 {% endfor %}
                 </div>
             {% elseif column.type == 'carousel' %}
                 <div class="carousel slide span{{ 12 / loop.length }}" id="carousel-{{ loop.index }}">
-                    <div class="carousel-inner">
+                    <div class="element carousel-inner">
                     {% for widget in column.widgets %}
                         <div class="item{% if loop.first %} active{% endif %}">
                             {{ widget.content|raw }}
@@ -25,8 +27,6 @@
                         </div>
                     {% endfor %}
                     </div>
-                    <a class="carousel-control left" href="#carousel-{{ loop.index }}" data-slide="prev">&lsaquo;</a>
-                    <a class="carousel-control right" href="#carousel-{{ loop.index }}" data-slide="next">&rsaquo;</a>
                 </div>
             {% endif %}
         {% endfor %}
@@ -43,10 +43,35 @@
 $('.carousel').carousel();
 
 if ($('.screen').length > 1) {
+    var co = 0;
+    var sw = $(window).width();
+    var fw = sw * $('.screen').length;
+    var mw = fw - sw;
+    var nw = sw;
 
-    var screens = $('.screen');
-    var screens_count = $('.screen').length;
+    $('div.container-fluid').width(fw);
+    $('.screen').width((sw - 40));
 
+    window.setInterval(function() {
+        if (nw > mw) {
+            $('div.container-fluid').animate({
+                'margin-left' : 0
+            }, function() {
+                nw = sw;
+            });
+        } else {
+            $('div.container-fluid').animate({
+                'margin-left' : (nw * -1)
+            }, 2000, function() {
+                nw = nw + sw;
+            });
+        }
+    }, 12000);
 }
+
+window.setTimeout(function() {
+    window.location.reload();
+}, 500000);
+
 </script>
 {% endblock %}
