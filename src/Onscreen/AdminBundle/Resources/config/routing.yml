@@ -1,3 +1,0 @@
-onscreen_admin_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: OnscreenAdminBundle:Default:index }

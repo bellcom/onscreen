@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+
+    {% include 'OnscreenAdminBundle:Default:nav.html.twig' with {'active' : 2 } %}
+
+    <h2>Screens - add or edit</h2>
+
+    <div class="row-fluid">
+
+        <form action="{{ path('_admin_screen_add') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_widget(form) }}
+            <input type="submit" class="btn">
+        </form>
+
+
+    </div>
+
+{% endblock %}

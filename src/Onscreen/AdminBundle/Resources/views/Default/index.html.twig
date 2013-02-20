@@ -1,1 +1,11 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+{% block content %}
+
+    {% include 'OnscreenAdminBundle:Default:nav.html.twig' with {'active' : 1 } %}
+
+    <h2>Dashboard</h2>
+
+    <div class="row-fluid">
+    </div>
+
+{% endblock %}
