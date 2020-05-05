@@ -1,5 +1,9 @@
 # onscreen
 
+@TODO Symfony 2.8 migration has to be finished See https://github.com/bellcom/onscreen/pull/2
+
+To get old state you could use branch https://github.com/bellcom/onscreen/tree/symfony-2.1 
+
 ## info tv on steroids
 
 ### will use:
